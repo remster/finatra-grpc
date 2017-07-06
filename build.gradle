@@ -30,6 +30,7 @@ dependencies{
     compile 'com.google.protobuf:protobuf-java:3.3.1'
     compile "io.grpc:grpc-protobuf:$grpcVersion"
     compile "io.grpc:grpc-stub:$grpcVersion"
+    compile "io.grpc:grpc-netty:${grpcVersion}"
     testCompile "junit:junit:4.11"
 }
 
@@ -64,6 +65,7 @@ sourceSets {
     main {
         java {
             srcDir "${protobuf.generatedFilesBaseDir}/main/java"
+            srcDir "${protobuf.generatedFilesBaseDir}/main/grpc"
         }
     }
 }
